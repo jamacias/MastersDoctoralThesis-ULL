@@ -1,0 +1,79 @@
+% Appendix B
+
+\chapter{Importando código en LaTeX} % Main appendix title
+
+\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixB}
+
+Un ejemplo del syntax highlight predeterminado para Python:
+\begin{lstlisting}[language=Python]
+import numpy as np
+ 
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+ 
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+ 
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+ 
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+ 
+                VT = np.zeros((n*m,1), int)
+ 
+    return M
+\end{lstlisting}
+
+Un ejemplo del syntax highlight personalizado para C++ (ver main.tex):
+
+\begin{lstlisting}[style=dark_atom]
+//----Importing libraries----//
+#include <Wire.h>
+#include <stdio.h> // I/O management i.e. sscanf()
+#include <stdlib.h>
+
+const int x_axis = 1;
+const int y_axis = 2;
+const int z_axis = 4;
+
+void setup(void){
+    Serial.begin(115200);
+    Serial.println("Inicializando...");
+}
+
+void loop(void){
+	x_val = calculate_average(x_axis);
+    Serial.print("x_val = ");
+    Serial.println(x_val);
+    y_val = calculate_average(y_axis);
+    Serial.print("y_val = ");
+    Serial.println(y_val);
+    z_val = calculate_average(z_axis);
+    Serial.print("z_val = ");
+    Serial.println(z_val);
+}
+
+int calculate_average(int axis){
+    int value;
+    int num = 10;
+    for(int i = 0; i < num; i++){
+        value += analogRead(axis);
+    }
+    int average = value/num;
+
+    return average;
+}
+\end{lstlisting}
