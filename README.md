@@ -1,4 +1,4 @@
-# MastersDoctoralThesis-ULL-
+# MastersDoctoralThesis-ULL
 Masters/Doctoral Thesis LaTeX Template
 Version 2.5/ES (09/03/18) -Traducción a español y adaptación a la normativa de la ULL.
 
