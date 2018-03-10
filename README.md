@@ -6,6 +6,8 @@ Este repositorio contiene la plantilla MastersDoctoralThesis de LaTeX con las ad
 
 Esto NO significa que no debas revisar la plantilla antes de entregar el proyecto, y por supuesto siempre puedes realizar las modificaciones que consideres siempre que respetes las licencias.
 
+NO soy responsable del uso que se haga a esta plantilla, ni de las consecuencias que conlleve usarla por parte del usuario.
+
 Version 2.x major modifications by:
 Vel (vel@latextemplates.com)
 
